@@ -16,11 +16,11 @@ import Container from '@material-ui/core/Container';
 import { Redirect, useHistory } from 'react-router-dom';
 import { Snackbar } from '@material-ui/core';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
-import ErrorText from '../../components/error_text';
+// import ErrorText from '../../components/error_text';
 import { useDispatch } from 'react-redux';
 import { login } from '../../slices/userSlice';
 import { useSelector } from '../../app/store';
-import { errorSelector, isFireSelector } from '../../selector/auth';
+import { isFireSelector } from '../../selector/auth';
 import { Authenticate, SignInWithSocialMedia as SocialMediaPopup } from '../../modules/auth';
 import { AuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
 import logging from '../../app/logging';
@@ -80,7 +80,7 @@ const LoginPage: React.FunctionComponent = () => {
     const [snackBarOpen, setSnackBarOpen] = useState<boolean>(false);
     const fireSelector = useSelector(isFireSelector);
 
-    const errorSelect = useSelector(errorSelector);
+    // const errorSelect = useSelector(errorSelector);
     const handleCloseSnack = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
             return;
